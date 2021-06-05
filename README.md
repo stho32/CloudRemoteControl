@@ -2,7 +2,7 @@
 A combination of projects that allow for communication and coordination of freely floating computers that just came into existence
 
 ## What?
-With VulturePS (https://github.com/naseif/VultrPS) naseif and I created an interface to the vultr api to create virtual computers and provision them with a few things. 
+With VulturePS (https://github.com/naseif/VultrPS) naseif and I created an interface to the vultr api to create virtual computers and provision them with a little startup script for initial provisioning. 
 Using this we can easily create a few machines in the cloud and install a few things here and there, but something remains missing:
 
 We need a way so that when a scenario is created the virtual machines can be coordinated and informed about each other.
@@ -31,7 +31,7 @@ When we start a "scenario", with which we mean a combination of virtual machines
 ## Scenario running example
 
 - the master tells the "mysql" instance to actually install mysql 
-- after receiving the "success" message from the mysql instance the master tells the mysql instance to download a git repository and provision the database with the sql files that are 
+- after receiving the "success" message from the mysql instance the master tells the mysql instance to download a git repository and provision the database with the sql files that are needed to create the tables and insert some testing data
 - the master sends to all instances their respective public ip addresses so they can modify their host files 
 - the master now tells the web-server to download another git repository and to set up an apache to host the php parts of the contained solution
 - the master sends a file to the web-server which will work as a configuration file.
